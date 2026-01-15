@@ -1,6 +1,29 @@
 # NeoVim Flake
-Using my own [Minimal NeoVim Wrapper](https://github.com/Gerg-L/mnw)
 
+This repository is a **derivative / customized fork** of  
+https://github.com/Gerg-L/nvim-flake
+
+It keeps the same core ideas and architecture, but adapts the workflow and
+documentation to make customization clearer and more explicit.
+
+It is built on top of **Gerg-L Minimal NeoVim Wrapper (mnw)**:
+https://github.com/Gerg-L/mnw
+
+---
+## What this is
+
+- Neovim is built as a **standalone flake application**
+- Plugins are **installed by Nix** (via `npins`)
+- Plugin loading & configuration is handled by **lazy.nvim**
+- lazy.nvim is used **only as a loader/orchestrator**, not a package manager
+
+In short:
+
+> **Nix installs plugins**  
+> **lazy.nvim loads them**  
+> **Lua configures them**
+
+---
 # Test it out
 With flakes enabled
 ```console
@@ -66,17 +89,70 @@ in
 ```
 
 # Forking usage guide
-
 Update the flake like any other `nix flake update`
 
-Add/remove/update plugins via [npins](https://github.com/andir/npins) 
-Example of adding a plugin: `npins add github nvim-treesitter nvim-treesitter-context --branch main`
-Example of updated all plugins: `npins update --full`
+Plugin management (THIS IS THE IMPORTANT PART)
+Plugins are managed using npins, but not directly.
+This repo provides two helper commands in the dev shell:
 
-All lua configuration is done in the /gerg directory and added to plugins
+start → plugins loaded at startup
+opt → optional / lazy plugins
 
-My lua config is not very good so I recommend writing your own
+Enter the dev shell
+```bash
+nix develop
+```
+Adding plugins
+```sh
+start add github owner repo
+#or
+opt add github owner repo
+```
+Examples:
+```sh
+start add github stevearc oil.nvim
+opt add github nvim-neo-tree neo-tree.nvim
+```
+This will:
 
+Update start.json / opt.json
+Regenerate npins.nix
+Make the plugin available to Neovim
+[Warn]Do not use npins init or bare npins add in this repo.
+
+Updating plugins
+```sh
+start update
+opt update
+```
+---
+Plugin configuration (Lua)
+Each plugin is configured via a lazy.nvim spec file:
+lua/lazy/<plugin>.lua
+Example (lua/lazy/oil.lua):
+```nix
+return {
+  "oil.nvim",
+  lazy = false,
+
+  after = function()
+    require("oil").setup({
+      keymaps = {
+        ["<C-c>"] = false,
+        ["<leader>o"] = "actions.close",
+      },
+    })
+  end,
+
+  wk = {
+    { "<leader>o", "<CMD>Oil<CR>", desc = "Toggle Oil" },
+  },
+}
+```
+Notes:
+Plugins are already installed by Nix
+The string "oil.nvim" is used as a lookup key, not a source
+wk entries are automatically registered with which-key
 ## Inspiration
 - [@the-argus's](https://github.com/the-argus) [nvim-config](https://github.com/the-argus/nvim-config)
 - [@NotAShelf's](https://github.com/NotAShelf) [neovim-flake](https://github.com/NotAShelf/nvf)
