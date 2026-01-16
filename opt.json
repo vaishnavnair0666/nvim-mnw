@@ -198,6 +198,35 @@
       "url": "https://github.com/catgoose/nvim-colorizer.lua/archive/81e676d3203c9eb6e4c0ccf1eba1679296ef923f.tar.gz",
       "hash": "sha256-1faAhmHrYhCyeVc4vRaRWC1OW38POjTEwORjtnRdoV4="
     },
+    "nvim-dap-ui": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "rcarriga",
+        "repo": "nvim-dap-ui"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v4.0.0",
+      "revision": "f7d75cca202b52a60c520ec7b1ec3414d6e77b0f",
+      "url": "https://api.github.com/repos/rcarriga/nvim-dap-ui/tarball/refs/tags/v4.0.0",
+      "hash": "sha256-cMpJJ2npriAFajLw1SEyDMjKUBFVFvYBr4dmFKoZyKw="
+    },
+    "nvim-dap-virtual-text": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "theHamsta",
+        "repo": "nvim-dap-virtual-text"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "fbdb48c2ed45f4a8293d0d483f7730d24467ccb6",
+      "url": "https://github.com/theHamsta/nvim-dap-virtual-text/archive/fbdb48c2ed45f4a8293d0d483f7730d24467ccb6.tar.gz",
+      "hash": "sha256-8hsk+EwnvoHCNhb0dcL9e4hQg9I+t/5Cy9ZoZgcz4fU="
+    },
     "nvim-notify": {
       "type": "Git",
       "repository": {

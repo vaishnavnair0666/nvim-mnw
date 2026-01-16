@@ -57,7 +57,6 @@ return {
         "nil_ls",
         "lua_ls",
         "ccls",
-        "jsonls",
         -- "rust_analyzer",
         "pyright",
         "bashls",

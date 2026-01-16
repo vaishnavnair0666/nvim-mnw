@@ -42,6 +42,22 @@
       "url": "https://github.com/nvimtools/none-ls.nvim/archive/3c206dfedf5f1385e9d29f85ffaec7874358592a.tar.gz",
       "hash": "sha256-WLRNPTttuB9M12hkpk5FVFmnvdwZpsBvIJnfSdhF0zw="
     },
+    "nvim-dap": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "mfussenegger",
+        "repo": "nvim-dap"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "0.10.0",
+      "revision": "b8abfc6baba5d9a561ca5d1a82aa790bc8175e6a",
+      "url": "https://api.github.com/repos/mfussenegger/nvim-dap/tarball/refs/tags/0.10.0",
+      "hash": "sha256-vd4MeY+Xf/TIghM4n4dALMHLVZ8S7av9lBv825evIEQ="
+    },
     "nvim-lspconfig": {
       "type": "GitRelease",
       "repository": {
@@ -70,6 +86,22 @@
       "revision": "f5eba192f39b453675d115351808bd51276d9de5",
       "url": "https://github.com/SmiteshP/nvim-navic/archive/f5eba192f39b453675d115351808bd51276d9de5.tar.gz",
       "hash": "sha256-rRUlGtClq4NmyDqg0NhytnxFDMVpQhuF5cPKKRJHl88="
+    },
+    "nvim-nio": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-neotest",
+        "repo": "nvim-nio"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v1.10.1",
+      "revision": "21f5324bfac14e22ba26553caf69ec76ae8a7662",
+      "url": "https://api.github.com/repos/nvim-neotest/nvim-nio/tarball/refs/tags/v1.10.1",
+      "hash": "sha256-eDbzJAGdUBhTwuD0Nt9FihZj1MmVdQfn/GKIybuu5a8="
     },
     "plenary.nvim": {
       "type": "GitRelease",
