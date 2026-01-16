@@ -1,8 +1,7 @@
-{
-  inputs,
-  lib,
-  pkgs,
-  ...
+{ inputs
+, lib
+, pkgs
+, ...
 }:
 let
   npinsToPlugins =
@@ -62,6 +61,7 @@ in
     #
     # Runtime dependencies
     #
+    qtdeclarative = pkgs.qt6.qtdeclarative;
     inherit (pkgs)
       deadnix
       statix
@@ -70,12 +70,25 @@ in
       lua-language-server
       stylua
 
-      #rustfmt
+      rustfmt
 
       ripgrep
       fd
       chafa
       vscode-langservers-extracted
+
+
+      ccls
+      clang-tools
+      # jdt-language-sever
+      # rust-analyzer
+
+      pyright
+
+      bash-language-server
+      yaml-language-server
+
+      marksman
       ;
   };
 

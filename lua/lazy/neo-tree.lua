@@ -11,7 +11,16 @@ return {
 				},
 				hijack_netrw_behavior = "open_default",
 			},
+			enable_git_status = true,
+			enable_diagnostics = true,
+			open_files_do_not_replace_types = { "terminal", "trouble", "qf" },
 			window = {
+				position = "left",
+				width = 40,
+				mapping_options = {
+					noremap = true,
+					nowait = true,
+				},
 				mappings = {
 					["<leader>e"] = "close_window",
 				},

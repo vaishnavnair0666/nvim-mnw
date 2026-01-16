@@ -8,6 +8,9 @@ return {
       LZN.trigger_load("lspkind.nvim")
     end,
     after = function()
+      vim.lsp.config("*", {
+        capabilities = require("blink.cmp").get_lsp_capabilities(),
+      })
       require("blink.cmp").setup({
         signature = { enabled = true },
         completion = {

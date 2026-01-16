@@ -14,13 +14,13 @@ https://github.com/Gerg-L/mnw
 
 - Neovim is built as a **standalone flake application**
 - Plugins are **installed by Nix** (via `npins`)
-- Plugin loading & configuration is handled by **lazy.nvim**
-- lazy.nvim is used **only as a loader/orchestrator**, not a package manager
+- Plugin loading & configuration is handled by **lz.nv**
+- lz.nvim is used **only as a loader/orchestrator**, not a package manager
 
 In short:
 
 > **Nix installs plugins**  
-> **lazy.nvim loads them**  
+> **lz.nv loads them**  
 > **Lua configures them**
 
 ---
@@ -118,7 +118,7 @@ This will:
 Update start.json / opt.json
 Regenerate npins.nix
 Make the plugin available to Neovim
-[Warn]Do not use npins init or bare npins add in this repo.
+[Warn] Do not use npins init or bare npins add in this repo.
 
 Updating plugins
 ```sh
@@ -126,29 +126,84 @@ start update
 opt update
 ```
 ---
-Plugin configuration (Lua)
-Each plugin is configured via a lazy.nvim spec file:
+##Plugin Workflow (How This Repo Works)
+
+This Neovim configuration uses a hybrid Nix + lazy-style loader model.
+Nix / npins installs and pins plugin sources (reproducibly)
+lazy-style specs (lz.n) control when and how plugins are configured
+Plugins are never downloaded at runtime
+Use start or opt from the dev shell:
+```sh
+nix develop
+```
+Startup plugins (must exist immediately):
+```sh
+start add github owner repo [--branch main|master]
+```
+Optional / lazy plugins:
+```sh
+opt add github owner repo [--branch main|master]
+```
+
+This updates: start.json or opt.json
+regenerates npins.nix
+If a plugin has no GitHub releases, always pass --branch.
+
+Decide: start vs opt (Important Rule)
+
+Put a plugin in start if:
+it is require()d during another plugin’s after hook
+it must exist on runtimepath at startup
+
+Put a plugin in opt if:
+it can load later (commands, events, keys)
+nothing eagerly depends on it
+dependencies = {} controls load order,
+start / opt controls runtime availability.
+
+Configure the Plugin (lazy-style spec)
+Create one file per plugin:
+
 lua/lazy/<plugin>.lua
-Example (lua/lazy/oil.lua):
+
+Example:
 ```nix
 return {
-  "oil.nvim",
-  lazy = false,
+  "plugin-name.nvim",
+  lazy = false, -- or true
+
+  dependencies = {
+    "dependency.nvim",
+  },
 
   after = function()
-    require("oil").setup({
-      keymaps = {
-        ["<C-c>"] = false,
-        ["<leader>o"] = "actions.close",
-      },
+    require("plugin-name").setup({
+      -- plugin config
     })
   end,
 
   wk = {
-    { "<leader>o", "<CMD>Oil<CR>", desc = "Toggle Oil" },
+    { "<leader>x", "<CMD>Command<CR>", desc = "Description" },
   },
 }
 ```
+Notes:
+The string "plugin-name.nvim" must match the pinned plugin directory
+wk entries are picked up automatically by the which-key handler
+One file = one plugin spec (never list multiple plugins in one spec)
+Run
+```sh
+nix run .
+```
+
+If something fails, the layer tells you where to look:
+
+Error type	Fix
+Nix eval error	pinning / JSON
+module not found	plugin in opt but required at startup
+loader/spec error	malformed lua/lazy/*.lua
+plugin runtime error	Lua config
+Each plugin is configured via a lz.nv spec file:
 Notes:
 Plugins are already installed by Nix
 The string "oil.nvim" is used as a lookup key, not a source
