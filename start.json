@@ -206,6 +206,19 @@
       "url": "https://api.github.com/repos/folke/tokyonight.nvim/tarball/refs/tags/v4.14.1",
       "hash": "sha256-kQsV0x8/ycFp3+S6YKyiKFsAG5taOdQmx/dMuDqGyEQ="
     },
+    "vim-moonfly-colors": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "bluz71",
+        "repo": "vim-moonfly-colors"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "d11b3d04cc1cb71a778d67a4df73283a5a6d66f4",
+      "url": "https://github.com/bluz71/vim-moonfly-colors/archive/d11b3d04cc1cb71a778d67a4df73283a5a6d66f4.tar.gz",
+      "hash": "sha256-+zUmQWRUNzdUDZBV7xmrA0415/HlagHDi+O9ehdaDN8="
+    },
     "which-key.nvim": {
       "type": "Git",
       "repository": {
