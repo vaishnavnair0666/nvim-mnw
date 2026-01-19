@@ -1,5 +1,34 @@
 {
   "pins": {
+    "gruvbox.nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "ellisonleao",
+        "repo": "gruvbox.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "2.0.0",
+      "revision": "ca36abf47f1d0ad577b464980a3d4af51bb26203",
+      "url": "https://api.github.com/repos/ellisonleao/gruvbox.nvim/tarball/refs/tags/2.0.0",
+      "hash": "sha256-4oDOPsl1bnMX5pgl3VXSBa9EseiwM1UPaQgBvJDL8LY="
+    },
+    "kanagawa.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "rebelot",
+        "repo": "kanagawa.nvim"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "aef7f5cec0a40dbe7f3304214850c472e2264b10",
+      "url": "https://github.com/rebelot/kanagawa.nvim/archive/aef7f5cec0a40dbe7f3304214850c472e2264b10.tar.gz",
+      "hash": "sha256-nHcQWTX4x4ala6+fvh4EWRVcZMNk5jZiZAwWhw03ExE="
+    },
     "lz.n": {
       "type": "Git",
       "repository": {
@@ -41,6 +70,35 @@
       "revision": "3c206dfedf5f1385e9d29f85ffaec7874358592a",
       "url": "https://github.com/nvimtools/none-ls.nvim/archive/3c206dfedf5f1385e9d29f85ffaec7874358592a.tar.gz",
       "hash": "sha256-WLRNPTttuB9M12hkpk5FVFmnvdwZpsBvIJnfSdhF0zw="
+    },
+    "nord.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "shaunsingh",
+        "repo": "nord.nvim"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "80c1e5321505aeb22b7a9f23eb82f1e193c12470",
+      "url": "https://github.com/shaunsingh/nord.nvim/archive/80c1e5321505aeb22b7a9f23eb82f1e193c12470.tar.gz",
+      "hash": "sha256-8uPbkaJBXsOGeYCyXSO/aMzf87PE5McwZeww4eoYZy8="
+    },
+    "nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "catppuccin",
+        "repo": "nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v1.11.0",
+      "revision": "cb5665990a797b102715188e73c44c3931b3b42e",
+      "url": "https://api.github.com/repos/catppuccin/nvim/tarball/refs/tags/v1.11.0",
+      "hash": "sha256-+tkfdGTsjb8FOhyz9IPnXrS/LkcsLY/TqJuE+Pcostw="
     },
     "nvim-dap": {
       "type": "GitRelease",
@@ -103,6 +161,22 @@
       "url": "https://api.github.com/repos/nvim-neotest/nvim-nio/tarball/refs/tags/v1.10.1",
       "hash": "sha256-eDbzJAGdUBhTwuD0Nt9FihZj1MmVdQfn/GKIybuu5a8="
     },
+    "onedark.nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "navarasu",
+        "repo": "onedark.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v1.0.3",
+      "revision": "631085064d202d07e4b677f11dcd24383f5c6fd9",
+      "url": "https://api.github.com/repos/navarasu/onedark.nvim/tarball/refs/tags/v1.0.3",
+      "hash": "sha256-h7p55pZpJBhIVeWyTOkrXHabvxTFILF83PW0lp4GDrs="
+    },
     "plenary.nvim": {
       "type": "GitRelease",
       "repository": {
@@ -160,6 +234,22 @@
       "revision": "3333a52ff548ba0a68af6d8da1e54f9cd96e9179",
       "url": "https://api.github.com/repos/nvim-telescope/telescope.nvim/tarball/refs/tags/v0.2.1",
       "hash": "sha256-QwhFgTRh4h+8QjZMkXkoxgr7bv27HCp2TG2HAjI8VVg="
+    },
+    "tokyonight.nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "folke",
+        "repo": "tokyonight.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v4.14.1",
+      "revision": "545d72cde6400835d895160ecb5853874fd5156d",
+      "url": "https://api.github.com/repos/folke/tokyonight.nvim/tarball/refs/tags/v4.14.1",
+      "hash": "sha256-kQsV0x8/ycFp3+S6YKyiKFsAG5taOdQmx/dMuDqGyEQ="
     },
     "vim-moonfly-colors": {
       "type": "Git",

@@ -11,8 +11,8 @@ return {
       trim_on_write = false,
 
       -- highlight trailing spaces
-      highlight = true,
+      highlight = false,
     })
   end,
-  keys = { { "<leader>t", "<CMD>Trim<CR>", desc = "Trim" } },
+  keys = { { "\\t", "<CMD>Trim<CR>", desc = "Trim" } },
 }
