@@ -1,34 +1,5 @@
 {
   "pins": {
-    "gruvbox.nvim": {
-      "type": "GitRelease",
-      "repository": {
-        "type": "GitHub",
-        "owner": "ellisonleao",
-        "repo": "gruvbox.nvim"
-      },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "submodules": false,
-      "version": "2.0.0",
-      "revision": "ca36abf47f1d0ad577b464980a3d4af51bb26203",
-      "url": "https://api.github.com/repos/ellisonleao/gruvbox.nvim/tarball/refs/tags/2.0.0",
-      "hash": "sha256-4oDOPsl1bnMX5pgl3VXSBa9EseiwM1UPaQgBvJDL8LY="
-    },
-    "kanagawa.nvim": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "rebelot",
-        "repo": "kanagawa.nvim"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "aef7f5cec0a40dbe7f3304214850c472e2264b10",
-      "url": "https://github.com/rebelot/kanagawa.nvim/archive/aef7f5cec0a40dbe7f3304214850c472e2264b10.tar.gz",
-      "hash": "sha256-nHcQWTX4x4ala6+fvh4EWRVcZMNk5jZiZAwWhw03ExE="
-    },
     "lz.n": {
       "type": "Git",
       "repository": {
@@ -70,19 +41,6 @@
       "revision": "3c206dfedf5f1385e9d29f85ffaec7874358592a",
       "url": "https://github.com/nvimtools/none-ls.nvim/archive/3c206dfedf5f1385e9d29f85ffaec7874358592a.tar.gz",
       "hash": "sha256-WLRNPTttuB9M12hkpk5FVFmnvdwZpsBvIJnfSdhF0zw="
-    },
-    "nord.nvim": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "shaunsingh",
-        "repo": "nord.nvim"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "80c1e5321505aeb22b7a9f23eb82f1e193c12470",
-      "url": "https://github.com/shaunsingh/nord.nvim/archive/80c1e5321505aeb22b7a9f23eb82f1e193c12470.tar.gz",
-      "hash": "sha256-8uPbkaJBXsOGeYCyXSO/aMzf87PE5McwZeww4eoYZy8="
     },
     "nvim": {
       "type": "GitRelease",
@@ -161,21 +119,18 @@
       "url": "https://api.github.com/repos/nvim-neotest/nvim-nio/tarball/refs/tags/v1.10.1",
       "hash": "sha256-eDbzJAGdUBhTwuD0Nt9FihZj1MmVdQfn/GKIybuu5a8="
     },
-    "onedark.nvim": {
-      "type": "GitRelease",
+    "nyoom.nvim": {
+      "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "navarasu",
-        "repo": "onedark.nvim"
+        "owner": "nyoom-engineering",
+        "repo": "nyoom.nvim"
       },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
+      "branch": "main",
       "submodules": false,
-      "version": "v1.0.3",
-      "revision": "631085064d202d07e4b677f11dcd24383f5c6fd9",
-      "url": "https://api.github.com/repos/navarasu/onedark.nvim/tarball/refs/tags/v1.0.3",
-      "hash": "sha256-h7p55pZpJBhIVeWyTOkrXHabvxTFILF83PW0lp4GDrs="
+      "revision": "f808500883ffc552b53a421139cc1915955759b7",
+      "url": "https://github.com/nyoom-engineering/nyoom.nvim/archive/f808500883ffc552b53a421139cc1915955759b7.tar.gz",
+      "hash": "sha256-XzQB4bZeS2xTCEsUvPNi66901ZSI1k576oEFjTA54nU="
     },
     "plenary.nvim": {
       "type": "GitRelease",
@@ -250,19 +205,6 @@
       "revision": "545d72cde6400835d895160ecb5853874fd5156d",
       "url": "https://api.github.com/repos/folke/tokyonight.nvim/tarball/refs/tags/v4.14.1",
       "hash": "sha256-kQsV0x8/ycFp3+S6YKyiKFsAG5taOdQmx/dMuDqGyEQ="
-    },
-    "vim-moonfly-colors": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "bluz71",
-        "repo": "vim-moonfly-colors"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "5b322b91fe0792d48ef7156af38739ae42fda7d1",
-      "url": "https://github.com/bluz71/vim-moonfly-colors/archive/5b322b91fe0792d48ef7156af38739ae42fda7d1.tar.gz",
-      "hash": "sha256-PpgXBOtYg7W8LHti5tqDdISW3ylvrwu4c+gTpgB2ic8="
     },
     "which-key.nvim": {
       "type": "Git",
