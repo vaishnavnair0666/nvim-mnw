@@ -1,17 +1,33 @@
 {
   "pins": {
-    "gitmoji.nvim": {
+    "blink-emoji.nvim": {
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "Dynge",
-        "repo": "gitmoji.nvim"
+        "owner": "moyiz",
+        "repo": "blink-emoji.nvim"
       },
-      "branch": "main",
+      "branch": "master",
       "submodules": false,
-      "revision": "2659de229c2b26d50732f1220700eebbcdb2d6ef",
-      "url": "https://github.com/Dynge/gitmoji.nvim/archive/2659de229c2b26d50732f1220700eebbcdb2d6ef.tar.gz",
-      "hash": "sha256-cihJ2U+GIqf98t6wS4Fso6R8l69vXT+BsstqY7rrlc4="
+      "revision": "066013e4c98a9318408ee3f1ca2dbcb6fa3e4c06",
+      "url": "https://github.com/moyiz/blink-emoji.nvim/archive/066013e4c98a9318408ee3f1ca2dbcb6fa3e4c06.tar.gz",
+      "hash": "sha256-kQcyvZbgH878HFHcmxBw7CA2HzdxtSoWqJxKqVFf/8M="
+    },
+    "blink-ripgrep.nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "mikavilpas",
+        "repo": "blink-ripgrep.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v2.2.2",
+      "revision": "71027ced21dfc27d3466ebc569d9987f3b8d15c1",
+      "url": "https://api.github.com/repos/mikavilpas/blink-ripgrep.nvim/tarball/refs/tags/v2.2.2",
+      "hash": "sha256-S0y7PIBuyUFQ72+wp7KBI+uQT3hxn/+TWcmHHqs40G4="
     },
     "lush.nvim": {
       "type": "GitRelease",

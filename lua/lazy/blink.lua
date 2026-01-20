@@ -3,7 +3,8 @@ return {
   {
     "blink.cmp",
     dependencies = {
-      "gitmoji.nvim",
+      "blink-emoji.nvim",
+      "blink-ripgrep.nvim",
     },
     event = "DeferredUIEnter",
     before = function()
@@ -14,7 +15,6 @@ return {
       vim.lsp.config("*", {
         capabilities = require("blink.cmp").get_lsp_capabilities(),
       })
-      require("gitmoji").setup({})
       require("blink.cmp").setup({
         signature = { enabled = true },
         completion = {
@@ -89,13 +89,42 @@ return {
           ["<C-f>"] = { "scroll_documentation_down", "fallback" },
         },
         sources = {
-          default = { "lazydev", "lsp", "buffer", "snippets", "path", "omni", "gitmoji" },
+          default = { "lazydev", "lsp", "buffer", "snippets", "path", "omni", "ripgrep", "emoji" },
           providers = {
-            gitmoji = {
-              name = "gitmoji",
-              module = "gitmoji.blink",
+            ripgrep = {
+              module = "blink-ripgrep",
+              name = "Ripgrep",
               opts = {
-                filetypes = { "gitcommit", "jj" },
+                prefix_min_len = 3,
+                project_root_marker = ".git",
+                fallback_to_regex_highlighting = true,
+                backend = {
+                  use = "gitgrep-or-ripgrep",
+                  ripgrep = {
+                    context_size = 5,
+                    max_filesize = "1M",
+                    project_root_fallback = true,
+                    search_casing = "--ignore-case",
+                    additional_rg_options = {},
+                    ignore_paths = {},
+                    additional_paths = {},
+                  },
+                },
+                gitgrep = {
+                  additional_gitgrep_options = {},
+                },
+              },
+            },
+            emoji = {
+              module = "blink-emoji",
+              name = "Emoji",
+              score_offset = 15,
+              opts = {
+                insert = true,
+                ---@type string|table|fun():table
+                trigger = function()
+                  return { ":" }
+                end,
               },
             },
             lazydev = {
