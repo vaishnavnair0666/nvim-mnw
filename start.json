@@ -1,5 +1,34 @@
 {
   "pins": {
+    "gitmoji.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Dynge",
+        "repo": "gitmoji.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "2659de229c2b26d50732f1220700eebbcdb2d6ef",
+      "url": "https://github.com/Dynge/gitmoji.nvim/archive/2659de229c2b26d50732f1220700eebbcdb2d6ef.tar.gz",
+      "hash": "sha256-cihJ2U+GIqf98t6wS4Fso6R8l69vXT+BsstqY7rrlc4="
+    },
+    "lush.nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "rktjmp",
+        "repo": "lush.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v2.0.1",
+      "revision": "6923ccef17c5276bc5d3cca907082e19ee165d55",
+      "url": "https://api.github.com/repos/rktjmp/lush.nvim/tarball/refs/tags/v2.0.1",
+      "hash": "sha256-K0pGXFRTgPQg+NWK+Kx/SMpU5Fh8SaWXw5nZ9XVD2Es="
+    },
     "lz.n": {
       "type": "Git",
       "repository": {
@@ -118,19 +147,6 @@
       "revision": "21f5324bfac14e22ba26553caf69ec76ae8a7662",
       "url": "https://api.github.com/repos/nvim-neotest/nvim-nio/tarball/refs/tags/v1.10.1",
       "hash": "sha256-eDbzJAGdUBhTwuD0Nt9FihZj1MmVdQfn/GKIybuu5a8="
-    },
-    "nyoom.nvim": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nyoom-engineering",
-        "repo": "nyoom.nvim"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "f808500883ffc552b53a421139cc1915955759b7",
-      "url": "https://github.com/nyoom-engineering/nyoom.nvim/archive/f808500883ffc552b53a421139cc1915955759b7.tar.gz",
-      "hash": "sha256-XzQB4bZeS2xTCEsUvPNi66901ZSI1k576oEFjTA54nU="
     },
     "plenary.nvim": {
       "type": "GitRelease",

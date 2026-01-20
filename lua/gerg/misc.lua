@@ -25,7 +25,7 @@ vim.opt.visualbell = false
 vim.opt.errorbells = false
 
 vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 vim.opt.clipboard = "unnamedplus"
 
@@ -66,7 +66,6 @@ vim.g.moonflyTransparent = true
 vim.g.moonflyUndercurls = false
 vim.g.moonflyUnderlineMatchParen = true
 vim.g.moonflyVirtualTextColor = true
-vim.cmd.colorscheme("moonfly")
 
 -- stop hiding double quotes in json files
 vim.g.indentLine_setConceal = 0

@@ -2,6 +2,9 @@ return {
   { "lspkind.nvim" },
   {
     "blink.cmp",
+    dependencies = {
+      "gitmoji.nvim",
+    },
     event = "DeferredUIEnter",
     before = function()
       LZN.trigger_load("lazydev.nvim")
@@ -11,6 +14,7 @@ return {
       vim.lsp.config("*", {
         capabilities = require("blink.cmp").get_lsp_capabilities(),
       })
+      require("gitmoji").setup({})
       require("blink.cmp").setup({
         signature = { enabled = true },
         completion = {
@@ -23,7 +27,7 @@ return {
                 kind_icon = {
                   text = function(ctx)
                     local icon = ctx.kind_icon
-                    if vim.tbl_contains({ "Path" }, ctx.source_name) then
+                    if ctx.source_name == "Path" then
                       local dev_icon, _ = require("nvim-web-devicons").get_icon(ctx.label)
                       if dev_icon then
                         icon = dev_icon
@@ -42,7 +46,7 @@ return {
                   -- keep the highlight groups in sync with the icons.
                   highlight = function(ctx)
                     local hl = ctx.kind_hl
-                    if vim.tbl_contains({ "Path" }, ctx.source_name) then
+                    if ctx.source_name == "Path" then
                       local dev_icon, dev_hl = require("nvim-web-devicons").get_icon(ctx.label)
                       if dev_icon then
                         hl = dev_hl
@@ -85,8 +89,15 @@ return {
           ["<C-f>"] = { "scroll_documentation_down", "fallback" },
         },
         sources = {
-          default = { "lazydev", "lsp", "buffer", "snippets", "path", "omni" },
+          default = { "lazydev", "lsp", "buffer", "snippets", "path", "omni", "gitmoji" },
           providers = {
+            gitmoji = {
+              name = "gitmoji",
+              module = "gitmoji.blink",
+              opts = {
+                filetypes = { "gitcommit", "jj" },
+              },
+            },
             lazydev = {
               name = "LazyDev",
               module = "lazydev.integrations.blink",
@@ -94,7 +105,7 @@ return {
             },
           },
         },
-        fuzzy = { implementation = "rust" },
+        fuzzy = { implementation = "prefer_rust_with_warning" },
       })
     end,
   },
