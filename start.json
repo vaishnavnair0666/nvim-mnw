@@ -1,5 +1,37 @@
 {
   "pins": {
+    "blink-cmp-dictionary": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Kaiser-Yang",
+        "repo": "blink-cmp-dictionary"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v2.0.0",
+      "revision": "7f4f92200200a5f17bcc5a0c346fd38e47a0da33",
+      "url": "https://api.github.com/repos/Kaiser-Yang/blink-cmp-dictionary/tarball/refs/tags/v2.0.0",
+      "hash": "sha256-FJMsWyzJy5tYHrcTVeC3j+Gp4vTcw1/LHrguM1TzBKk="
+    },
+    "blink-cmp-words": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "archie-judd",
+        "repo": "blink-cmp-words"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v1.0.0",
+      "revision": "d6a56f532a1826b4f3aeed4d5e2fe7b8743a9244",
+      "url": "https://api.github.com/repos/archie-judd/blink-cmp-words/tarball/refs/tags/v1.0.0",
+      "hash": "sha256-x4VSBDdcij4BkvIzkFnGVtJvq+ow1rTtZk9MWeTlzpE="
+    },
     "blink-emoji.nvim": {
       "type": "Git",
       "repository": {

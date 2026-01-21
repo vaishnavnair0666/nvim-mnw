@@ -5,6 +5,8 @@ return {
     dependencies = {
       "blink-emoji.nvim",
       "blink-ripgrep.nvim",
+      "blink-cmp-dictionary",
+      "blink-cmp-words",
     },
     event = "DeferredUIEnter",
     before = function()
@@ -15,6 +17,7 @@ return {
       vim.lsp.config("*", {
         capabilities = require("blink.cmp").get_lsp_capabilities(),
       })
+
       require("blink.cmp").setup({
         signature = { enabled = true },
         completion = {
@@ -73,8 +76,32 @@ return {
         },
         keymap = {
           preset = "none",
+          ["<c-d>"] = {
+            function()
+              require("blink.cmp").show({ providers = { "dictionary" } })
+              vim.notify("dictionary")
+            end,
+          },
+          ["<C-w>"] = {
+            function()
+              require("blink.cmp").show({ providers = { "wordsdictionary" } })
+              vim.notify("words dictionary")
+            end,
+          },
+          ["<C-x>"] = {
+            function()
+              require("blink.cmp").show({ providers = { "thesaurus" } })
+              vim.notify("thesaurus")
+            end,
+          },
+          ["<C-a>"] = {
+            function()
+              require("blink.cmp").show({ providers = { "emoji" } })
+              vim.notify("emoji")
+            end,
+          },
           ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-          ["<C-e>"] = { "hide", "fallback" },
+          ["<C-h>"] = { "hide", "fallback" },
           ["<CR>"] = { "accept", "fallback" },
 
           ["<Tab>"] = { "select_next", "fallback" },
@@ -89,11 +116,41 @@ return {
           ["<C-f>"] = { "scroll_documentation_down", "fallback" },
         },
         sources = {
-          default = { "lazydev", "lsp", "buffer", "snippets", "path", "omni", "ripgrep", "emoji" },
+          default = {
+            "lazydev",
+            "lsp",
+            "buffer",
+            "snippets",
+            "path",
+            "omni",
+            "ripgrep",
+          },
           providers = {
+            thesaurus = {
+              name = "blink-cmp-words",
+              module = "blink-cmp-words.thesaurus",
+              score_offset = 0,
+              opts = {
+                definition_pointers = { "!", "&", "^" },
+                similarity_pointers = { "&", "^" },
+                similarity_depth = 2,
+                filetypes = { "markdown", "text" },
+              },
+            },
+            wordsdictionary = {
+              name = "blink-cmp-words",
+              module = "blink-cmp-words.dictionary",
+              score_offset = 0,
+              opts = {
+                dictionary_search_threshold = 3,
+                definition_pointers = { "!", "&", "^" },
+                filetypes = { "markdown", "text", "gitcommit" },
+              },
+            },
             ripgrep = {
               module = "blink-ripgrep",
               name = "Ripgrep",
+              score_offset = -15,
               opts = {
                 prefix_min_len = 3,
                 project_root_marker = ".git",
@@ -114,6 +171,12 @@ return {
                   additional_gitgrep_options = {},
                 },
               },
+            },
+            dictionary = {
+              module = "blink-cmp-dictionary",
+              name = "Dict",
+              min_keyword_length = 3,
+              opts = { filetypes = { "markdown", "text", "gitcommit" } },
             },
             emoji = {
               module = "blink-emoji",
