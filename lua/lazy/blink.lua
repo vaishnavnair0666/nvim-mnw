@@ -124,6 +124,7 @@ return {
             "path",
             "omni",
             "ripgrep",
+            "dictionary",
           },
           providers = {
             thesaurus = {
@@ -176,6 +177,7 @@ return {
               module = "blink-cmp-dictionary",
               name = "Dict",
               min_keyword_length = 3,
+              score_offset = -20,
               opts = { filetypes = { "markdown", "text", "gitcommit" } },
             },
             emoji = {
