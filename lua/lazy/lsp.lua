@@ -2,6 +2,83 @@ return {
   {
     "nvim-lspconfig",
     lazy = false,
+
+    after = function()
+      local lspconfig = require("lspconfig")
+
+      -- Enable inlay hints when supported
+      vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function(args)
+          local client = vim.lsp.get_client_by_id(args.data.client_id)
+          if client and client.supports_method("textDocument/inlayHint") then
+            vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
+          end
+        end,
+      })
+
+      -- Lua
+      lspconfig.lua_ls.setup({
+        settings = {
+          Lua = {
+            diagnostics = { globals = { "vim" } },
+            workspace = { checkThirdParty = false },
+            hint = { enable = true },
+          },
+        },
+      })
+
+      -- TypeScript / JavaScript
+      lspconfig.ts_ls.setup({
+        settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints = "all",
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+            },
+          },
+          javascript = {
+            inlayHints = {
+              includeInlayParameterNameHints = "all",
+            },
+          },
+        },
+      })
+
+      -- Nix
+      lspconfig.nixd.setup({
+        settings = {
+          nixd = {
+            formatting = { command = { "nixfmt" } },
+            options = {
+              nixos = {
+                expr = "(import <nixpkgs/nixos> { configuration = /etc/nixos/configuration.nix; })",
+              },
+              home_manager = {
+                expr = "(import <home-manager/modules> { config = {}; pkgs = import <nixpkgs> {}; })",
+              },
+              nixpkgs = {
+                expr = "(import <nixpkgs> {})",
+              },
+            },
+          },
+        },
+      })
+
+      -- Other servers
+      for _, server in ipairs({
+        "html",
+        "cssls",
+        "jsonls",
+        "bashls",
+        "jdtls",
+        "qmlls",
+        "pyright",
+        "clangd",
+      }) do
+        lspconfig[server].setup({})
+      end
+    end,
   },
 
   {
@@ -10,33 +87,23 @@ return {
 
     dependencies = {
       "nvim-lspconfig",
-      -- "blink.cmp",
     },
 
     after = function()
       local null_ls = require("null-ls")
-
-      local formatting = null_ls.builtins.formatting
-      local diagnostics = null_ls.builtins.diagnostics
-      local code_actions = null_ls.builtins.code_actions
 
       null_ls.setup({
         diagnostics_format = "[#{m}] #{s} (#{c})",
         debounce = 250,
         default_timeout = 5000,
         sources = {
-          formatting.stylua,
-          code_actions.statix,
-          diagnostics.deadnix,
+          null_ls.builtins.formatting.stylua,
+          null_ls.builtins.code_actions.statix,
+          null_ls.builtins.diagnostics.deadnix,
         },
       })
 
-      -- LSP capabilities
-      -- vim.lsp.config("*", {
-      --   capabilities = require("blink.cmp").get_lsp_capabilities(),
-      -- })
-
-      -- Diagnostics UI
+      -- Diagnostics UI (global, correct place)
       vim.diagnostic.config({
         update_in_insert = true,
         virtual_text = false,
@@ -50,22 +117,6 @@ return {
             [vim.diagnostic.severity.HINT] = "",
           },
         },
-      })
-
-      -- Enable servers
-      vim.lsp.enable({
-        "nil_ls",
-        "lua_ls",
-        "ccls",
-        -- "rust_analyzer",
-        "pyright",
-        "bashls",
-        "tsserver",
-        "html",
-        "cssls",
-        "jsonls",
-        "jdtls",
-        "qmlls",
       })
     end,
 
