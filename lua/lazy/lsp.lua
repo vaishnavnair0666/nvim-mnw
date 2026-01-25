@@ -44,6 +44,19 @@ return {
 					},
 				},
 			})
+			lspconfig.svelte.setup({
+				settings = {
+					svelte = {
+						plugin = {
+							typescript = {
+								diagnostics = { enable = true },
+								hover = { enable = true },
+								completions = { enable = true },
+							},
+						},
+					},
+				},
+			})
 
 			-- Nix
 			lspconfig.nixd.setup({
