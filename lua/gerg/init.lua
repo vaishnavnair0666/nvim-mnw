@@ -9,4 +9,3 @@ end
 
 require("gerg.misc")
 require("lazy.keymaps.image")
-require("lazy.keymaps.dadbod")

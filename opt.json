@@ -317,45 +317,6 @@
       "revision": "765360a6f6ac732f4c78c5c694f4b892a55b53ec",
       "url": "https://github.com/cappyzawa/trim.nvim/archive/765360a6f6ac732f4c78c5c694f4b892a55b53ec.tar.gz",
       "hash": "sha256-h4dgbcOY2ji+TeX0jlMohDe2oL5paogl7Tt6lZG9i7M="
-    },
-    "vim-dadbod": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "tpope",
-        "repo": "vim-dadbod"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "6d1d41da4873a445c5605f2005ad2c68c99d8770",
-      "url": "https://github.com/tpope/vim-dadbod/archive/6d1d41da4873a445c5605f2005ad2c68c99d8770.tar.gz",
-      "hash": "sha256-1CA+H8wXDcA5sQLpHsJHHn9hNhWNyzZHHkVx3LqSPeA="
-    },
-    "vim-dadbod-completion": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "kristijanhusak",
-        "repo": "vim-dadbod-completion"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "a8dac0b3cf6132c80dc9b18bef36d4cf7a9e1fe6",
-      "url": "https://github.com/kristijanhusak/vim-dadbod-completion/archive/a8dac0b3cf6132c80dc9b18bef36d4cf7a9e1fe6.tar.gz",
-      "hash": "sha256-F+bCrgrRyNtgafwMSjkEBVj3LCBlxFZKajMF0K+x8D8="
-    },
-    "vim-dadbod-ui": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "kristijanhusak",
-        "repo": "vim-dadbod-ui"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "48c4f271da13d380592f4907e2d1d5558044e4e5",
-      "url": "https://github.com/kristijanhusak/vim-dadbod-ui/archive/48c4f271da13d380592f4907e2d1d5558044e4e5.tar.gz",
-      "hash": "sha256-0S9M4OH/hxYXvpWSN49vASrWbYM+SXWkSEvdt7gbOUo="
     }
   },
   "version": 7
