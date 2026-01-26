@@ -86,8 +86,8 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "572f5660cf05f8cd8834e096d7b4c921ba18e175",
-      "url": "https://github.com/rafamadriz/friendly-snippets/archive/572f5660cf05f8cd8834e096d7b4c921ba18e175.tar.gz",
+      "revision": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
+      "url": "https://github.com/rafamadriz/friendly-snippets/archive/6cd7280adead7f586db6fccbd15d2cac7e2188b9.tar.gz",
       "hash": "sha256-FzApcTbWfFkBD9WsYMhaCyn6ky8UmpUC2io/co/eByM="
     },
     "lush.nvim": {
@@ -115,9 +115,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "b36c73e1a9d1cb2c05b354b390da0d141c9fa09d",
-      "url": "https://github.com/nvim-neorocks/lz.n/archive/b36c73e1a9d1cb2c05b354b390da0d141c9fa09d.tar.gz",
-      "hash": "sha256-Z8r0fOmXnj38g+FCvJnS/pG7PRcvKT0MZ8YPeNytc80="
+      "revision": "f13ffc487fc83769228f88affd2cb36da99d3bc6",
+      "url": "https://github.com/nvim-neorocks/lz.n/archive/f13ffc487fc83769228f88affd2cb36da99d3bc6.tar.gz",
+      "hash": "sha256-U2sSTnF/PY/9JJ/HeE9j8pih43mCGt3VXE/iYO/P38g="
     },
     "neo-tree.nvim": {
       "type": "GitRelease",
