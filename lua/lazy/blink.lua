@@ -126,11 +126,6 @@ return {
             "dictionary",
           },
           providers = {
-            dadbod = {
-              name = "Dadbod",
-              module = "vim_dadbod_completion.blink",
-              score_offset = -10,
-            },
             thesaurus = {
               name = "blink-cmp-words",
               module = "blink-cmp-words.thesaurus",
