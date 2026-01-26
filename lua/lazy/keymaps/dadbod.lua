@@ -1,47 +1,7 @@
 local map = vim.keymap.set
-local opts = { silent = true }
 
-map(
-	"n",
-	"<leader>bb",
-	"<cmd>DBUIToggle<CR>",
-	vim.tbl_extend("force", opts, {
-		desc = "DB: Toggle UI",
-	})
-)
-
-map(
-	"n",
-	"<leader>br",
-	"<cmd>DBUIRefresh<CR>",
-	vim.tbl_extend("force", opts, {
-		desc = "DB: Refresh UI",
-	})
-)
-
-map(
-	{ "n", "v" },
-	"<leader>bq",
-	"<cmd>DB<CR>",
-	vim.tbl_extend("force", opts, {
-		desc = "DB: Run query",
-	})
-)
-
-map(
-	"n",
-	"<leader>bl",
-	"<cmd>DBLastQueryInfo<CR>",
-	vim.tbl_extend("force", opts, {
-		desc = "DB: Last query info",
-	})
-)
-
-map(
-	"n",
-	"<leader>bc",
-	"<cmd>DBUIAddConnection<CR>",
-	vim.tbl_extend("force", opts, {
-		desc = "DB: Add connection",
-	})
-)
+map("n", "<leader>bb", "<cmd>DBUIToggle<CR>", { desc = "DB UI toggle" })
+map("n", "<leader>bf", "<cmd>DBUIFindBuffer<CR>", { desc = "DB find buffer" })
+map("n", "<leader>bi", "<cmd>DBUILastQueryInfo<CR>", { desc = "DB last query info" })
+map("n", "<leader>bc", "<cmd>DBUIAddConnection<CR>", { desc = "DB add connection" })
+map({ "n", "v" }, "<leader>bq", "<cmd>DB<CR>", { desc = "DB execute query" })
