@@ -1,3 +1,4 @@
+local map = vim.keymap.set
 local function notify(msg)
 	vim.notify(msg, vim.log.levels.INFO)
 end
@@ -12,7 +13,7 @@ local function current_file()
 end
 
 -- Always view with imv
-vim.keymap.set("n", "<leader>iv", function()
+map("n", "<leader>iv", function()
 	local file = current_file()
 	if not file then
 		return
@@ -22,7 +23,7 @@ vim.keymap.set("n", "<leader>iv", function()
 end, { desc = "View image (imv)" })
 
 -- Edit based on filetype
-vim.keymap.set("n", "<leader>ie", function()
+map("n", "<leader>ie", function()
 	local file = current_file()
 	if not file then
 		return
