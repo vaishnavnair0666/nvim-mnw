@@ -122,7 +122,6 @@ return {
             "buffer",
             "snippets",
             "path",
-            "omni",
             "ripgrep",
             "dictionary",
           },
