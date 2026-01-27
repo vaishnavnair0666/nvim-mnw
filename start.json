@@ -241,6 +241,19 @@
       "url": "https://api.github.com/repos/nvim-lua/plenary.nvim/tarball/refs/tags/v0.1.4",
       "hash": "sha256-zR44d9MowLG1lIbvrRaFTpO/HXKKrO6lbtZfvvTdx+o="
     },
+    "rest.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "rest-nvim",
+        "repo": "rest.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "714d5512aaec5565d55652480c16c26f8d95645d",
+      "url": "https://github.com/rest-nvim/rest.nvim/archive/714d5512aaec5565d55652480c16c26f8d95645d.tar.gz",
+      "hash": "sha256-RB2UPFk2/AIX7Q362CvlxYm/CvqePiI093PLLn0EwJ4="
+    },
     "telescope-media-files.nvim": {
       "type": "Git",
       "repository": {

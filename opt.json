@@ -55,6 +55,19 @@
       "url": "https://github.com/Saecki/crates.nvim/archive/ac9fa498a9edb96dc3056724ff69d5f40b898453.tar.gz",
       "hash": "sha256-jfmST/S9ymwgQ99PTCOlJkk5zaxE5HiDV16TmTISDII="
     },
+    "fidget.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "j-hui",
+        "repo": "fidget.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "7fa433a83118a70fe24c1ce88d5f0bd3453c0970",
+      "url": "https://github.com/j-hui/fidget.nvim/archive/7fa433a83118a70fe24c1ce88d5f0bd3453c0970.tar.gz",
+      "hash": "sha256-Zap4UVicIvCaPqCMgdlnEAGbMzq1xM4uGpVqZL1iju0="
+    },
     "fzf-lua": {
       "type": "Git",
       "repository": {

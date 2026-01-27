@@ -1,19 +1,14 @@
-{
-  inputs,
-  lib,
-  pkgs,
-  ...
-}:
+{ inputs, lib, pkgs, ... }:
 let
-  npinsToPlugins =
-    input: builtins.mapAttrs (_: v: v { inherit pkgs; }) (import ./npins.nix { inherit input; });
-in
-{
+  npinsToPlugins = input:
+    builtins.mapAttrs (_: v: v { inherit pkgs; })
+    (import ./npins.nix { inherit input; });
+in {
   inherit (inputs.neovim-nightly.packages.${pkgs.stdenv.system}) neovim;
 
   appName = "gerg";
 
-  extraLuaPackages = p: [ p.jsregexp ];
+  extraLuaPackages = p: [ p.jsregexp p.mimetypes p.xml2lua ];
 
   providers = {
     ruby.enable = true;
@@ -33,17 +28,11 @@ in
   desktopEntry = false;
   plugins = {
     dev.gerg = {
-      pure =
-        let
-          fs = lib.fileset;
-        in
-        fs.toSource {
-          root = ./.;
-          fileset = fs.unions [
-            ./lua
-            ./after
-          ];
-        };
+      pure = let fs = lib.fileset;
+      in fs.toSource {
+        root = ./.;
+        fileset = fs.unions [ ./lua ./after ];
+      };
       impure = "~/Projects/nvim-flake";
     };
 
@@ -53,8 +42,7 @@ in
 
     optAttrs = {
       "blink.cmp" = inputs.self.packages.${pkgs.stdenv.system}.blink-cmp;
-    }
-    // npinsToPlugins ./opt.json;
+    } // npinsToPlugins ./opt.json;
 
   };
 
@@ -65,30 +53,17 @@ in
     qtdeclarative = pkgs.qt6.qtdeclarative;
 
     inherit (pkgs)
-      deadnix
-      statix
-      nil
+      deadnix statix nil
 
-      lua-language-server
-      stylua
+      lua-language-server stylua
 
-      rustfmt
-      rust-analyzer
+      rustfmt rust-analyzer
 
-      ripgrep
-      fd
-      chafa
-      vscode-langservers-extracted
+      ripgrep fd chafa vscode-langservers-extracted
 
-      ccls
-      clang-tools
+      ccls clang-tools
 
-      pyright
-      bash-language-server
-      yaml-language-server
-      marksman
-      lldb
-      ;
+      pyright bash-language-server yaml-language-server marksman lldb;
   };
 
 }
