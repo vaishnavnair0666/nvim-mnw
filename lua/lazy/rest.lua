@@ -32,18 +32,18 @@ return {
 
 	keys = {
 		{
-			"<leader>rr",
+			"<leader>pp",
 			"<cmd>Rest run<cr>",
 			desc = "Run HTTP request",
 		},
 		{
-			"<leader>rl",
+			"<leader>pl",
 			"<cmd>Rest last<cr>",
 			desc = "Re-run last request",
 		},
 	},
 
 	wk = {
-		{ "<leader>r", desc = "REST / API" },
+		{ "<leader>p", desc = "REST / API" },
 	},
 }
