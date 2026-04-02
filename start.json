@@ -77,6 +77,19 @@
       "url": "https://api.github.com/repos/mikavilpas/blink-ripgrep.nvim/tarball/refs/tags/v2.2.2",
       "hash": "sha256-S0y7PIBuyUFQ72+wp7KBI+uQT3hxn/+TWcmHHqs40G4="
     },
+    "calendar-vim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-telekasten",
+        "repo": "calendar-vim"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "a7e73e02c92566bf427b2a1d6a61a8f23542cc21",
+      "url": "https://github.com/nvim-telekasten/calendar-vim/archive/a7e73e02c92566bf427b2a1d6a61a8f23542cc21.tar.gz",
+      "hash": "sha256-4XeDd+myM+wtHUsr3s1H9+GAwIjK8fAqBbFnBCeatPo="
+    },
     "friendly-snippets": {
       "type": "Git",
       "repository": {

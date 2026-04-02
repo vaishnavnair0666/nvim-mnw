@@ -22,6 +22,27 @@ map("n", "<leader>iv", function()
 	vim.fn.jobstart({ "imv", file }, { detach = true })
 end, { desc = "View image (imv)" })
 
+-- view img via path
+local function open_image_under_cursor()
+	local line = vim.api.nvim_get_current_line()
+
+	-- extract markdown image path: ![...](path)
+	local path = line:match("%!%[.-%]%((.-)%)")
+
+	if not path then
+		notify("No image found on line")
+		return
+	end
+
+	-- handle relative paths
+	local fullpath = vim.fn.expand("%:p:h") .. "/" .. path
+	fullpath = vim.fn.fnamemodify(fullpath, ":p")
+
+	vim.fn.jobstart({ "imv", fullpath }, { detach = true })
+end
+
+map("n", "<leader>ip", open_image_under_cursor, { desc = "Preview image (markdown)" })
+
 -- Edit based on filetype
 map("n", "<leader>ie", function()
 	local file = current_file()

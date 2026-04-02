@@ -318,6 +318,19 @@
       "url": "https://github.com/mrcjkb/rustaceanvim/archive/796f06742e373012b860dc20f9ecccbfc670dc28.tar.gz",
       "hash": "sha256-mllPFhWImd7VoQXeMKtt0ttcxgbb7y/bOrudnBidz84="
     },
+    "telekasten.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-telekasten",
+        "repo": "telekasten.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "760c7cdbbd0bb5337d11533bc09732223c752e41",
+      "url": "https://github.com/nvim-telekasten/telekasten.nvim/archive/760c7cdbbd0bb5337d11533bc09732223c752e41.tar.gz",
+      "hash": "sha256-CsW4Q5WsB832uge3nsleEBpP4LfbGiI7Mpm9rY9XJak="
+    },
     "trim.nvim": {
       "type": "Git",
       "repository": {
