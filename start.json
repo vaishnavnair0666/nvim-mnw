@@ -90,6 +90,22 @@
       "url": "https://github.com/nvim-telekasten/calendar-vim/archive/a7e73e02c92566bf427b2a1d6a61a8f23542cc21.tar.gz",
       "hash": "sha256-4XeDd+myM+wtHUsr3s1H9+GAwIjK8fAqBbFnBCeatPo="
     },
+    "flash.nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "folke",
+        "repo": "flash.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v2.1.0",
+      "revision": "ec0bf2842189f65f60fd40bf3557cac1029cc932",
+      "url": "https://api.github.com/repos/folke/flash.nvim/tarball/refs/tags/v2.1.0",
+      "hash": "sha256-Qh9ty28xtRS3qXxE/ugx9FqAKrdeFGEf7W6yEORnZV8="
+    },
     "friendly-snippets": {
       "type": "Git",
       "repository": {
@@ -237,6 +253,22 @@
       "revision": "21f5324bfac14e22ba26553caf69ec76ae8a7662",
       "url": "https://api.github.com/repos/nvim-neotest/nvim-nio/tarball/refs/tags/v1.10.1",
       "hash": "sha256-eDbzJAGdUBhTwuD0Nt9FihZj1MmVdQfn/GKIybuu5a8="
+    },
+    "nvim-surround": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kylechui",
+        "repo": "nvim-surround"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v4.0.4",
+      "revision": "61319d4bd1c5e336e197defa15bd104c51f0fb29",
+      "url": "https://api.github.com/repos/kylechui/nvim-surround/tarball/refs/tags/v4.0.4",
+      "hash": "sha256-3rvRrTVYImIuOPk7DsbP3m2w4M7WS1mjKE2EOKibGf4="
     },
     "plenary.nvim": {
       "type": "GitRelease",
